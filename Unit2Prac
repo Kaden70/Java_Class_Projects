@@ -1,0 +1,53 @@
+package unit_2;
+import java.util.Scanner;
+
+public class Unit2Prac {
+    public static void main(String[] args) {
+        boolean canVote = true;
+        int x = 9;
+        int y = 6;
+        int num1 = 10;
+        int num2 = 777;
+        int num3 = 60;
+
+        if (canVote) {
+            System.out.printf("If x and y are equal: %b\n", x == y);
+        }
+
+        if (num1 > num2) {
+            System.out.printf("This is the bigger number: %d", num1);
+        } else {
+                System.out.printf("This is the bigger number: %d", num2);
+        }
+
+        if (canVote) {
+            if (num2 > num1 && num2 < num3) {
+                System.out.printf("\nnum2, %d, is the middle number", num2);
+            } else if (num1 > num2 && num1 < num3) {
+                System.out.printf("\nnum1, %d, is the middle number", num1);
+            } else {
+                System.out.printf("\nnum3, %d, is the middle number", num3);
+            }
+        }
+
+        Scanner input = new Scanner(System.in);
+        int selection;
+        System.out.print("\nEnter a number with it being 1, 2, or 3: ");
+        selection = input.nextInt();
+        input.close();
+        switch (selection) {
+            case 1:
+                System.out.println("The color is yellow.");
+                break;
+            case 2:
+                System.out.println("The color is blue.");
+                break;
+            case 3:
+                System.out.println("The color is red.");
+                break;
+            default:
+                System.out.println("The selection is invalid.");
+                break;
+        }
+    }
+}
