@@ -1,0 +1,21 @@
+package unit_2;
+import java.util.Scanner;
+
+public class U2Ex1 {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int correctNum = 7;
+
+        System.out.print("Guess a number between 1 and 10: ");
+        int number = input.nextInt();
+        input.close();
+
+        if (number < correctNum) {
+            System.out.println("You guessed too low");
+        } else if (number > correctNum) {
+            System.out.println("You guessed too high");
+        } else {
+            System.out.println("You guessed right");
+        }
+    }
+}
