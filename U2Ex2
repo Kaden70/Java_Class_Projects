@@ -1,0 +1,23 @@
+package unit_2;
+import java.util.Scanner;
+
+public class U2Ex2 {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int time;
+
+        System.out.println("Enter a number in military time (1-24): ");
+        time = input.nextInt();
+        input.close();
+
+        if (time > 5 && time < 12) {
+            System.out.println("Good morning");
+        } else if (time > 11 && time < 18) {
+            System.out.println("Good afternoon");
+        } else if (time > 17 && time < 24) {
+            System.out.println("Good evening");
+        } else {
+            System.out.println("Good day!");
+        }
+    }
+}
