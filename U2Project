@@ -1,0 +1,37 @@
+package unit_2;
+import java.util.Scanner;
+
+public class Unit2Project {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        double yogurt = 1.00;
+        double tomato = 0.50;
+        double lettuce = 0.30;
+        double skittles = 0.75;
+        double total = 0.00;
+
+        System.out.println("For each of the 3 options, choose yogurt, tomato, lettuce, or skittles. To get 2 toppings only: chose one topping and then choose the other topping twice. If you only want one topping, say that topping three times.");
+        System.out.println("Enter the first topping: ");
+        String t1 = input.nextLine();
+        System.out.println("Enter second topping: ");
+        String t2 = input.nextLine();
+        System.out.println("Enter third topping: ");
+        String t3 = input.nextLine();
+        input.close();
+        
+        if (t1.equals("yogurt") || t2.equals("yogurt") || t3.equals("yogurt")) {
+            total += yogurt; }
+        if (t1.equals("tomato") || t2.equals("tomato") || t3.equals("tomato")) {
+            total += tomato; }
+        if (t1.equals("lettuce") || t2.equals("lettuce") || t3.equals("lettuce")) {
+            total += lettuce; }
+        if (t1.equals("skittles") || t2.equals("skittles") || t3.equals("skittles")) {
+            total += skittles; }
+        
+        if (total >= 1.00) {
+            System.out.printf("Discount applied! Your total cost is $%.2f", (total - (total * 0.10)));
+        } else {
+            System.out.printf("Your total cost is $%.2f", total);
+        }
+    }
+}
