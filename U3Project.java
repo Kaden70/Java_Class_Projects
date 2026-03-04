@@ -1,6 +1,5 @@
 package unit_3;
 import java.util.Scanner;
-import java.lang.Math;
 
 public class U3Project {
     public static void main(String args[]) {
@@ -9,15 +8,18 @@ public class U3Project {
         int number = input.nextInt();
 
         int guess = 500;
+        int amount = 250;
         boolean check = false;
 
         while (check != true) {
             System.out.println("Is your number " + guess + "?");
             char feedback = input.next().charAt(0);
             if (feedback == 'L') {
-                guess = (int) Math.floor(guess / 2);
+                guess = guess - amount;
+                amount = (amount / 2) + 1;
             } else if (feedback == 'H') {
-                guess = guess + (int) Math.ceil(guess / 5);
+                guess = guess + amount;
+                amount = (amount / 2) + 1;
             } else if (feedback == 'G') {
                 for (int w = 1; w < number + 1; w++) {
                     System.out.println(w + " hip-hip-hooray!");
