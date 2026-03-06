@@ -1,27 +1,25 @@
 package unit_3;
 import java.util.Scanner;
-
+// Number guessing game
 public class U3Project {
     public static void main(String args[]) {
         Scanner input = new Scanner(System.in);
-        System.out.println("Enter a number between 1-1000 and the computer will guess it. Respond with: Type L if your number is lower. Type H if your number is higher. Type G if the computer guessed your number. Make sure numbers are uppercase.");
-        int number = input.nextInt();
+        System.out.println("Think of a number between 1-1000 and the computer will guess it. Respond with: Type L if your number is lower. Type H if your number is higher. Type G if the computer guessed your number. Make sure numbers are uppercase.");
 
-        int guess = 500;
-        int amount = 250;
+        int low = 1;
+        int high = 1000;
         boolean check = false;
 
         while (check != true) {
+            int guess = (low + high) / 2;
             System.out.println("Is your number " + guess + "?");
             char feedback = input.next().charAt(0);
             if (feedback == 'L') {
-                guess = guess - amount;
-                amount = (amount / 2) + 1;
+                high = guess - 1;
             } else if (feedback == 'H') {
-                guess = guess + amount;
-                amount = (amount / 2) + 1;
+                low = guess + 1;
             } else if (feedback == 'G') {
-                for (int w = 1; w < number + 1; w++) {
+                for (int w = 1; w < guess + 1; w++) {
                     System.out.println(w + " hip-hip-hooray!");
                 }
                 check = true;
