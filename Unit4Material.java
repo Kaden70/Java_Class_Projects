@@ -33,9 +33,8 @@ public class Unit4Material {
         String[][] combination = { {"Minesweeper", "Chess", "Fallout", "POSTAL 2"}, {"Windows", "macOS", "Linux", "TempleOS"} };
 
         // 9.
-        for (int i = 0; i < 8; i++) {
-            System.out.println(combination[i]);
-            for (int j = 0; j < 8; j++) {
+        for (int i = 0; i < combination.length; i++) {
+            for (int j = 0; j < combination[i].length; j++) {
                 System.out.println(combination[i][j]);
             }
         }
